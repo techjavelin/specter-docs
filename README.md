@@ -21,6 +21,25 @@ SPECTER is a cross-platform forensic disk acquisition toolkit written in Go. It 
 
 ---
 
+### License and Liability
+
+**SPECTER is proprietary software.** By downloading, installing, or running
+SPECTER, you accept the terms of the [License Agreement](LICENSE). Please read
+the license before use.
+
+SPECTER is provided **"as is" without warranty of any kind**, express or
+implied. Tech Javelin, Ltd. accepts no responsibility or liability for any
+legal consequences, evidence challenges, regulatory penalties, or other outcomes
+arising from the use of this software.
+
+**You must consult qualified legal counsel in your jurisdiction before using
+SPECTER for evidence collection in legal proceedings.** See the
+[Evidence Collection Guide](docs/EVIDENCE-GUIDE.md) for forensic best practices
+and the [Technical Reference](docs/TECHNICAL-REFERENCE.md) for details on tools,
+collection methods, and admissibility considerations.
+
+---
+
 ## Why SPECTER?
 
 A specter is a ghost -- an exact but intangible echo of something that once existed. That is precisely what forensic disk imaging does: it creates a ghost image of a device, a perfect bit-for-bit copy that preserves the original state without altering it. The image is the specter of the machine.
@@ -28,6 +47,26 @@ A specter is a ghost -- an exact but intangible echo of something that once exis
 The deliberate misspelling -- SPECTER, not SPECTRE -- is intentional. This is not a Bond villain or a CVE. It is a nod to the American English spelling and a quiet declaration that this tool is its own thing. It also serves as a hat tip to the era that inspired it: the rambunctious, irreverent, ASCII-art-in-your-MOTD hacker culture of the 1990s, when tools had personality, names meant something, and nobody spelled anything the way you expected them to.
 
 SPECTER creates ghosts. That is what it does. That is why it is called what it is called.
+
+---
+
+## Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Commands](#commands)
+- [Resuming an Interrupted Acquisition](#resuming-an-interrupted-acquisition)
+- [Output Structure](#output-structure)
+- [Chain of Custody (Seal)](#chain-of-custody-seal)
+- [Cloud Upload](#cloud-upload)
+- [Upload Settings](#upload-settings)
+- [Configuration Reference](#configuration-reference)
+- [Requirements](#requirements)
+- [Troubleshooting](#troubleshooting)
+- [Evidence Collection Guide](#evidence-collection-guide)
+- [Technical Reference](#technical-reference)
+- [License](#license)
 
 ---
 
@@ -625,6 +664,29 @@ For forensic best practices, chain of custody procedures, legal considerations,
 and cloud storage security guidance, see the
 [Evidence Collection Guide](docs/EVIDENCE-GUIDE.md).
 
+Topics covered:
+- Pre-collection requirements and legal authorization
+- Physical device handling, labeling, and packaging
+- Chain of custody documentation
+- Integrity verification and digital signing
+- Evidence preservation and cold storage
+- Cloud storage tenancy, permissions, logging, and retention
+- Operational checklists
+
+## Technical Reference
+
+For detailed information on the tools SPECTER uses, how each acquisition phase
+works, licensing implications of bundled tools, and justification for tool
+selection, see the [Technical Reference](docs/TECHNICAL-REFERENCE.md).
+
+Topics covered:
+- Disk imaging (ewfacquire, E01 format, command parameters)
+- Memory capture (WinPmem, osxpmem, /proc/kcore)
+- Volatile state collection (processes, network, DNS, ARP)
+- Triage collection (registry, event logs, browser artifacts, prefetch)
+- Integrity and sealing (SHA-256, HMAC-SHA256)
+- Tool licensing summary (LGPL, Apache, BSD)
+
 **Important:** Consult qualified legal counsel in your jurisdiction before using
 SPECTER for evidence collection in legal proceedings.
 
@@ -637,3 +699,5 @@ Proprietary. (c) 2026 Tech Javelin, Ltd. All Rights Reserved.
 - **Website**: https://techjavelin.com
 - **GitHub**: https://github.com/techjavelin/specter-app
 - **Evidence Guide**: [docs/EVIDENCE-GUIDE.md](docs/EVIDENCE-GUIDE.md)
+- **Technical Reference**: [docs/TECHNICAL-REFERENCE.md](docs/TECHNICAL-REFERENCE.md)
+- **Changelog**: [CHANGELOG.md](CHANGELOG.md)
