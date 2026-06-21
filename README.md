@@ -11,7 +11,7 @@
 
 **by Tech Javelin**
 
-[![Release](https://img.shields.io/github/v/release/techjavelin/specter-docs?label=release)](https://github.com/techjavelin/specter-docs/releases)
+[![Release](https://img.shields.io/github/v/release/techjavelin/specter-app?label=release)](https://github.com/techjavelin/specter-app/releases)
 [![License](https://img.shields.io/badge/license-proprietary-red.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)]()
 
@@ -48,7 +48,7 @@ SPECTER creates ghosts. That is what it does. That is why it is called what it i
 
 ## Installation
 
-Download the latest release binary for your platform from [GitHub Releases](https://github.com/techjavelin/specter-docs/releases).
+Download the latest release binary for your platform from [GitHub Releases](https://github.com/techjavelin/specter-app/releases).
 
 Extract the archive and place the binary in your PATH or run it directly from a USB drive or network share.
 
@@ -159,7 +159,7 @@ Use JumpCloud Commands to download and execute SPECTER on Linux or macOS endpoin
 
 ```bash
 # JumpCloud Command (Linux/macOS)
-curl -sL https://github.com/techjavelin/specter-docs/releases/latest/download/specter_VERSION_linux_amd64.zip -o /tmp/specter.zip
+curl -sL https://github.com/techjavelin/specter-app/releases/latest/download/specter_VERSION_linux_amd64.zip -o /tmp/specter.zip
 unzip -o /tmp/specter.zip -d /tmp/specter
 cat > /tmp/specter/specter.yaml << 'EOF'
 examiner: "SOC Team"
@@ -185,7 +185,7 @@ Use Intune Remediation Scripts to deploy SPECTER on Windows endpoints:
 
 ```powershell
 # Intune Remediation Script (Windows)
-$specterUrl = "https://github.com/techjavelin/specter-docs/releases/latest/download/specter_VERSION_windows_amd64.zip"
+$specterUrl = "https://github.com/techjavelin/specter-app/releases/latest/download/specter_VERSION_windows_amd64.zip"
 $workDir = "$env:TEMP\specter"
 New-Item -ItemType Directory -Force -Path $workDir | Out-Null
 Invoke-WebRequest -Uri $specterUrl -OutFile "$workDir\specter.zip"
@@ -219,7 +219,7 @@ Use a Jamf Pro policy with a script payload to deploy SPECTER on macOS endpoints
 #!/bin/bash
 # Jamf Pro Script Payload (macOS)
 WORK_DIR=$(mktemp -d)
-curl -sL https://github.com/techjavelin/specter-docs/releases/latest/download/specter_VERSION_darwin_arm64.zip -o "$WORK_DIR/specter.zip"
+curl -sL https://github.com/techjavelin/specter-app/releases/latest/download/specter_VERSION_darwin_arm64.zip -o "$WORK_DIR/specter.zip"
 unzip -o "$WORK_DIR/specter.zip" -d "$WORK_DIR/specter"
 chmod +x "$WORK_DIR/specter/specter"
 
@@ -360,7 +360,7 @@ Disk images (E01 files) use a `verified_by` field instead of re-hashing. Because
 
 ### Manifest Validation
 
-The manifest is validated against a JSON Schema before writing. The schema definition is available in the [specter-docs repository](https://github.com/techjavelin/specter-docs).
+The manifest is validated against a JSON Schema before writing. The schema definition is available in the [specter-app repository](https://github.com/techjavelin/specter-app).
 
 A full acquisition (all 4 phases) automatically seals on completion. Partial runs require explicit `--seal` flag or subsequent `specter seal` command.
 
@@ -626,4 +626,4 @@ Proprietary. (c) 2025 Tech Javelin, Ltd. All Rights Reserved.
 ## Links
 
 - **Website**: https://techjavelin.com
-- **GitHub**: https://github.com/techjavelin/specter-docs
+- **GitHub**: https://github.com/techjavelin/specter-app
